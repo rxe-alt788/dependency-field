@@ -1,50 +1,100 @@
 # Methodology
 
-Dependency Field begins with the user's outcome rather than an organisation chart or idealised process map.
+## The problem
 
-## 1. State the outcome
+People often map dependencies by reciting the familiar process.
 
-Describe what must be achieved in ordinary language.
+That usually produces statements like:
 
-## 2. Map apparent dependencies
+- apply for job
+- get finance sign-off
+- send the document for legal review
+- submit the form
 
-For each dependency record:
+Some of those steps may matter.
 
-- what must happen, exist, arrive or be decided;
-- what it directly enables;
-- dependency type;
-- current belief about its strength;
-- stated basis;
-- owner or role, if useful.
+Some are merely normal routes.
 
-## 3. Test the dependency
+Some are inherited assumptions.
 
-### Failure test
-What actually happens if this dependency is skipped?
+Dependency compression becomes much more useful when the field distinguishes the three.
 
-### Authority test
-Who or what says this is required, and is that source current and binding?
+## Method
 
-### Alternative-path test
-Can the same outcome be reached another way?
+### 1. Start with the outcome
 
-### Parallel test
-Can this occur concurrently instead of sequentially?
+Ask:
 
-### Information test
-Is the dependency really a need for information that could be exposed earlier or automatically?
+**What are you trying to get done?**
 
-### Inheritance test
-Does this dependency exist because it is necessary, or because the process has historically contained it?
+### 2. Convert the outcome into a target state
 
-## 4. Generate hypotheses
+Ask:
 
-The tool identifies possible interventions. These are hypotheses for review, not instructions.
+**What state would be true if that outcome had already occurred?**
 
-## 5. Compare fields
+This translation is essential.
 
-The current field preserves the observed structure. The compression hypothesis shows what the structure might look like if candidate changes were adopted.
+Without it, the map remains too close to task language.
 
-## 6. Human decision
+### 3. Add candidate items
 
-The user determines what is defensible to remove, change, parallelise or retain.
+Add what appears relevant. Do not insist that the user classify perfectly on first entry.
+
+### 4. Apply the counterfactual test
+
+For each candidate item, ask:
+
+**If this never happened, could the target state still occur?**
+
+- If **no**, the item is a candidate **required state**.
+- If **yes**, the item is **not** a strict dependency. It may be a pathway or a false dependency.
+- If **partial**, the item may matter for some versions of the target state but not all.
+- If **unknown**, the item needs further investigation.
+
+### 5. Distinguish truth-condition from route
+
+A required state is not the same thing as a pathway.
+
+Example:
+
+- required state: a decision-maker knows enough about me to consider hiring me
+- pathways:
+  - job application
+  - referral
+  - recruiter introduction
+  - direct approach
+  - unsolicited offer
+
+### 6. Distinguish route from assumption
+
+Some steps are treated as mandatory simply because they are familiar.
+
+Example:
+
+- “use the job portal” may be a normal route;
+- if the target state could occur without it, it is not a strict dependency.
+
+### 7. Read the field structurally
+
+The goal is not merely to produce a prettier process map.
+
+The goal is to arrive at a more defensible statement of:
+
+- what must be true;
+- what may be true via multiple routes;
+- what is merely assumed.
+
+## Output categories
+
+### Required state
+A true dependency.
+
+### Pathway
+One route to satisfying a requirement.
+
+### Assumption
+A step wrongly treated as a requirement.
+
+### Unresolved item
+Needs more inquiry.
