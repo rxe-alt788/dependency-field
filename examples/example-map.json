@@ -1,0 +1,35 @@
+{
+  "goal": "Get a project approved and ready to start",
+  "nodes": [
+    {
+      "id": "example_finance",
+      "label": "Finance receives engineering numbers",
+      "type": "information",
+      "strength": "soft",
+      "basis": "Normal internal process",
+      "owner": "Finance",
+      "parentId": "goal",
+      "skipImpact": "delay",
+      "alternative": "unknown",
+      "parallel": "yes",
+      "bindingBasis": "unknown",
+      "compression": null
+    },
+    {
+      "id": "example_engineering",
+      "label": "Engineering receives supplier quote",
+      "type": "information",
+      "strength": "assumed",
+      "basis": "This is how the process is normally run",
+      "owner": "Engineering",
+      "parentId": "example_finance",
+      "skipImpact": "minor",
+      "alternative": "yes",
+      "parallel": "yes",
+      "bindingBasis": "no",
+      "compression": null
+    }
+  ],
+  "selectedId": null,
+  "analysedAt": null
+}

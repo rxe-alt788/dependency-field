@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dependency Field</title>
+<link rel="stylesheet" href="dependency.css" />
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div>
+      <a class="brand" href="index.html">Dependency Field</a>
+      <div class="sub">Private structural dependency mapping</div>
+    </div>
+    <nav class="navlinks" aria-label="Project navigation">
+      <a href="#method">Method</a>
+      <a href="docs/PRIVACY.md">Privacy</a>
+      <a href="https://github.com/rxe-alt788/Observatory">Observatory lineage</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Dependency compression · structural mapping instrument</div>
+    <h1>What has to happen before this can happen?</h1>
+    <p>Map the dependencies around something you are trying to get done. The field separates what is actually required from what is merely inherited, assumed, repeated or waiting for somebody to notice it.</p>
+    <div class="privacy-note"><strong>Local-first prototype.</strong> Your entries remain in this browser unless you export them. This page makes no network requests with your map data.</div>
+  </section>
+
+  <main class="layout">
+    <section class="card builder-card">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">1 · Define the outcome</div>
+          <h2>Tell the field what you are trying to get done.</h2>
+        </div>
+        <div class="row"><button class="ghost" id="exampleBtn" type="button">Load example</button><button class="ghost" id="resetBtn" type="button">Reset field</button></div>
+      </div>
+
+      <label class="field-label" for="goalInput">Outcome</label>
+      <textarea id="goalInput" rows="3" placeholder="Example: Get the project approved and ready to start."></textarea>
+      <div class="row actions-row">
+        <button class="primary" id="setGoalBtn" type="button">Set outcome</button>
+        <span class="hint">Use ordinary language. The field does not require process-map theatre.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="eyebrow">2 · Add what appears to be required</div>
+      <h2>Add a dependency</h2>
+      <div class="form-grid">
+        <div class="full">
+          <label class="field-label" for="depLabel">What has to happen, exist, arrive or be decided?</label>
+          <input id="depLabel" placeholder="Example: Finance receives engineering numbers" />
+        </div>
+        <div>
+          <label class="field-label" for="depType">Dependency type</label>
+          <select id="depType">
+            <option value="information">Information</option>
+            <option value="approval">Approval / authority</option>
+            <option value="sequence">Sequence</option>
+            <option value="resource">Resource</option>
+            <option value="coordination">Coordination</option>
+            <option value="institutional">Policy / institutional</option>
+            <option value="technical">Technical</option>
+            <option value="unknown">Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="depStrength">Current belief</label>
+          <select id="depStrength">
+            <option value="hard">Hard · cannot proceed without it</option>
+            <option value="soft">Soft · normally precedes it</option>
+            <option value="assumed">Assumed · treated as required</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+        <div class="full">
+          <label class="field-label" for="depBasis">Why is it believed to be required?</label>
+          <input id="depBasis" placeholder="Example: Finance policy; project habit; manager says so; nobody is sure" />
+        </div>
+        <div>
+          <label class="field-label" for="depOwner">Owner / role <span class="optional">optional</span></label>
+          <input id="depOwner" placeholder="Finance / Person A / Supplier" />
+        </div>
+        <div>
+          <label class="field-label" for="depParent">What does it directly enable?</label>
+          <select id="depParent"></select>
+        </div>
+      </div>
+      <button class="primary" id="addDepBtn" type="button">Add dependency</button>
+
+      <div class="divider"></div>
+
+      <div class="section-head compact">
+        <div>
+          <div class="eyebrow">3 · Interrogate the map</div>
+          <h2>Dependencies often hide inside their own explanation.</h2>
+        </div>
+      </div>
+      <div class="question-grid" id="diagnosticQuestions"></div>
+    </section>
+
+    <aside class="side">
+      <section class="card panel status-panel">
+        <div class="eyebrow">Field status</div>
+        <h2 id="goalTitle">No outcome set</h2>
+        <div class="metrics" id="metrics"></div>
+        <div class="button-stack">
+          <button id="analyseBtn" class="primary" type="button">Analyse compression candidates</button>
+          <button id="exportBtn" class="ghost" type="button">Export map JSON</button>
+          <label class="ghost file-label" for="importInput">Import map JSON</label>
+          <input id="importInput" class="visually-hidden" type="file" accept="application/json,.json" />
+        </div>
+      </section>
+
+      <section class="card panel inspector" id="inspector">
+        <div class="eyebrow">Inspector</div>
+        <h2>Select a dependency</h2>
+        <p class="muted">Click a node in the map or an item in the dependency ledger.</p>
+      </section>
+    </aside>
+  </main>
+
+  <section class="card map-card">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">4 · See the structure</div>
+        <h2>Dependency field</h2>
+        <p class="muted">Lines show direct dependency. Dashed lines are assumed or uncertain. Select a node to inspect its basis and compression options.</p>
+      </div>
+      <div>
+        <div class="view-toggle" role="group" aria-label="Map view">
+          <button class="view-btn active" id="currentViewBtn" type="button">Current field</button>
+          <button class="view-btn" id="compressedViewBtn" type="button">Compression hypothesis</button>
+        </div>
+        <div class="legend">
+        <span><i class="dot hard"></i> hard</span>
+        <span><i class="dot soft"></i> soft</span>
+        <span><i class="dot assumed"></i> assumed</span>
+        <span><i class="dot candidate"></i> compression candidate</span>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap" id="mapWrap">
+      <svg id="depMap" viewBox="0 0 1200 700" role="img" aria-label="Dependency map"></svg>
+      <div class="map-empty" id="mapEmpty">Set an outcome, then add what appears to be required.</div>
+    </div>
+  </section>
+
+  <section class="card panel method-card" id="method">
+    <div class="eyebrow">Method</div>
+    <h2>Map before compressing.</h2>
+    <p class="muted">Dependency Field first makes the current structure visible. It then tests whether dependencies are binding, inherited, informational, sequential or merely assumed. Compression is a hypothesis, not an instruction.</p>
+  </section>
+
+  <section class="results-grid">
+    <section class="card panel">
+      <div class="eyebrow">Dependency ledger</div>
+      <h2>What the field currently believes</h2>
+      <div id="ledger" class="ledger"></div>
+    </section>
+    <section class="card panel">
+      <div class="eyebrow">Compression reading</div>
+      <h2>What may be removable, parallelisable or compressible</h2>
+      <div id="compressionResults" class="compression-results">
+        <p class="muted">Run analysis after mapping the first dependency chain.</p>
+      </div>
+    </section>
+  </section>
+
+  <footer class="footer">
+    Dependency Field · observation before intervention · a dependency may be real without being permanent
+  </footer>
+</div>
+<script type="module" src="dependency.js"></script>
+</body>
+</html>
