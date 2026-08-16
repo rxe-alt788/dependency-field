@@ -11,166 +11,173 @@
   <header class="topbar">
     <div>
       <a class="brand" href="index.html">Dependency Field</a>
-      <div class="sub">Private structural dependency mapping</div>
+      <div class="sub">A local-first instrument for converting process talk into actual dependencies.</div>
     </div>
     <nav class="navlinks" aria-label="Project navigation">
       <a href="#method">Method</a>
       <a href="docs/PRIVACY.md">Privacy</a>
-      <a href="https://github.com/rxe-alt788/Observatory">Observatory lineage</a>
+      <a href="docs/OBSERVATORY_INTEGRATION.md">Observatory lineage</a>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Dependency compression · structural mapping instrument</div>
-    <h1>What has to happen before this can happen?</h1>
-    <p>Map the dependencies around something you are trying to get done. The field separates what is actually required from what is merely inherited, assumed, repeated or waiting for somebody to notice it.</p>
-    <div class="privacy-note"><strong>Local-first prototype.</strong> Your entries remain in this browser unless you export them. This page makes no network requests with your map data.</div>
+    <div class="eyebrow">Dependency compression · necessary-state mapping</div>
+    <h1>Do not map the usual process. Map what must actually become true.</h1>
+    <p>Dependency Field separates <strong>required states</strong>, <strong>possible pathways</strong>, and <strong>assumptions treated as requirements</strong>. “Get a job” becomes “be hired into acceptable paid work.” “Apply for a job” may be a pathway, but it is not automatically a true dependency.</p>
+    <div class="privacy-note"><strong>Local-first prototype.</strong> Your mapping data stays in this browser unless you export it. The application is designed to work without transmitting your field data.</div>
   </section>
 
   <main class="layout">
-    <section class="card builder-card">
+    <section class="panel input-panel">
       <div class="section-head">
         <div>
-          <div class="eyebrow">1 · Define the outcome</div>
-          <h2>Tell the field what you are trying to get done.</h2>
+          <div class="eyebrow">1 · Define the outcome and target state</div>
+          <h2>Start in ordinary language, then convert it into a state that would make the outcome true.</h2>
         </div>
-        <div class="row"><button class="ghost" id="exampleBtn" type="button">Load example</button><button class="ghost" id="resetBtn" type="button">Reset field</button></div>
+        <div class="row">
+          <button class="ghost" id="exampleBtn" type="button">Load job example</button>
+          <button class="ghost" id="resetBtn" type="button">Reset field</button>
+        </div>
       </div>
 
-      <label class="field-label" for="goalInput">Outcome</label>
-      <textarea id="goalInput" rows="3" placeholder="Example: Get the project approved and ready to start."></textarea>
+      <label class="field-label" for="goalInput">What are you trying to get done?</label>
+      <textarea id="goalInput" rows="3" placeholder="Example: Get a job."></textarea>
+
+      <div class="row actions-row compact-row">
+        <button class="ghost" id="translateBtn" type="button">Suggest target-state phrasing</button>
+        <span class="hint">The helper will suggest a more structural phrasing. You can edit it freely.</span>
+      </div>
+
+      <label class="field-label" for="targetStateInput">What state would be true if that outcome had already occurred?</label>
+      <textarea id="targetStateInput" rows="3" placeholder="Example: I have been hired into acceptable paid work."></textarea>
       <div class="row actions-row">
-        <button class="primary" id="setGoalBtn" type="button">Set outcome</button>
-        <span class="hint">Use ordinary language. The field does not require process-map theatre.</span>
+        <button class="primary" id="setGoalBtn" type="button">Set target state</button>
+        <span class="hint">This is the anchor. Everything else is tested against it.</span>
       </div>
 
       <div class="divider"></div>
 
-      <div class="eyebrow">2 · Add what appears to be required</div>
-      <h2>Add a dependency</h2>
+      <div class="eyebrow">2 · Add what appears to matter</div>
+      <h2>Add a candidate item</h2>
       <div class="form-grid">
         <div class="full">
-          <label class="field-label" for="depLabel">What has to happen, exist, arrive or be decided?</label>
-          <input id="depLabel" placeholder="Example: Finance receives engineering numbers" />
+          <label class="field-label" for="itemLabel">What appears relevant?</label>
+          <input id="itemLabel" placeholder="Example: An employer knows enough about me to consider hiring me." />
         </div>
         <div>
-          <label class="field-label" for="depType">Dependency type</label>
-          <select id="depType">
-            <option value="information">Information</option>
-            <option value="approval">Approval / authority</option>
-            <option value="sequence">Sequence</option>
-            <option value="resource">Resource</option>
-            <option value="coordination">Coordination</option>
-            <option value="institutional">Policy / institutional</option>
-            <option value="technical">Technical</option>
-            <option value="unknown">Not sure yet</option>
+          <label class="field-label" for="itemKind">How are you currently treating it?</label>
+          <select id="itemKind">
+            <option value="required">Required state</option>
+            <option value="pathway">Pathway</option>
+            <option value="assumption">Assumption / inherited step</option>
+            <option value="blocker">Blocker / condition</option>
           </select>
         </div>
         <div>
-          <label class="field-label" for="depStrength">Current belief</label>
-          <select id="depStrength">
-            <option value="hard">Hard · cannot proceed without it</option>
-            <option value="soft">Soft · normally precedes it</option>
-            <option value="assumed">Assumed · treated as required</option>
-            <option value="unknown">Unknown</option>
-          </select>
+          <label class="field-label" for="itemParent">What does it directly enable?</label>
+          <select id="itemParent"></select>
         </div>
         <div class="full">
-          <label class="field-label" for="depBasis">Why is it believed to be required?</label>
-          <input id="depBasis" placeholder="Example: Finance policy; project habit; manager says so; nobody is sure" />
+          <label class="field-label" for="itemBasis">Why do you think it matters?</label>
+          <input id="itemBasis" placeholder="Example: Without it, no one can decide to hire me." />
         </div>
         <div>
-          <label class="field-label" for="depOwner">Owner / role <span class="optional">optional</span></label>
-          <input id="depOwner" placeholder="Finance / Person A / Supplier" />
+          <label class="field-label" for="itemOwner">Owner / role <span class="optional">optional</span></label>
+          <input id="itemOwner" placeholder="Employer / recruiter / Person A" />
         </div>
         <div>
-          <label class="field-label" for="depParent">What does it directly enable?</label>
-          <select id="depParent"></select>
+          <label class="field-label" for="itemCounterfactual">If this never happened, could the target state still occur?</label>
+          <select id="itemCounterfactual">
+            <option value="unknown">Not sure yet</option>
+            <option value="no">No · the target state cannot occur</option>
+            <option value="yes">Yes · the target state could still occur</option>
+            <option value="partial">Partly · some forms could still occur</option>
+          </select>
         </div>
       </div>
-      <button class="primary" id="addDepBtn" type="button">Add dependency</button>
+      <button class="primary" id="addItemBtn" type="button">Add candidate</button>
 
       <div class="divider"></div>
 
-      <div class="section-head compact">
-        <div>
-          <div class="eyebrow">3 · Interrogate the map</div>
-          <h2>Dependencies often hide inside their own explanation.</h2>
-        </div>
-      </div>
+      <div class="eyebrow">3 · Test the structure</div>
+      <h2>Use the questions below to collapse rituals into real dependencies.</h2>
       <div class="question-grid" id="diagnosticQuestions"></div>
     </section>
 
     <aside class="side">
-      <section class="card panel status-panel">
+      <section class="panel status-panel">
         <div class="eyebrow">Field status</div>
-        <h2 id="goalTitle">No outcome set</h2>
+        <h2 id="goalTitle">No target state set</h2>
+        <div class="sub-card">
+          <div class="sub-card-title">Original outcome</div>
+          <div id="goalSummary" class="sub-card-body">Nothing set yet.</div>
+        </div>
         <div class="metrics" id="metrics"></div>
         <div class="button-stack">
-          <button id="analyseBtn" class="primary" type="button">Analyse compression candidates</button>
+          <button id="analyseBtn" class="primary" type="button">Convert to real dependencies</button>
           <button id="exportBtn" class="ghost" type="button">Export map JSON</button>
           <label class="ghost file-label" for="importInput">Import map JSON</label>
           <input id="importInput" class="visually-hidden" type="file" accept="application/json,.json" />
         </div>
       </section>
 
-      <section class="card panel inspector" id="inspector">
+      <section class="panel inspector" id="inspector">
         <div class="eyebrow">Inspector</div>
-        <h2>Select a dependency</h2>
-        <p class="muted">Click a node in the map or an item in the dependency ledger.</p>
+        <h2>Select a candidate</h2>
+        <p class="muted">Click a node in the map or an item in the ledger to inspect and edit it.</p>
       </section>
     </aside>
   </main>
 
-  <section class="card map-card">
+  <section class="panel map-panel">
     <div class="section-head">
       <div>
-        <div class="eyebrow">4 · See the structure</div>
-        <h2>Dependency field</h2>
-        <p class="muted">Lines show direct dependency. Dashed lines are assumed or uncertain. Select a node to inspect its basis and compression options.</p>
+        <div class="eyebrow">4 · View the field</div>
+        <h2>From input language to structural reading</h2>
+        <p class="muted">The raw map shows how you currently think about the problem. The structural reading reclassifies items as required states, pathways, assumptions, or unresolved items.</p>
       </div>
       <div>
         <div class="view-toggle" role="group" aria-label="Map view">
-          <button class="view-btn active" id="currentViewBtn" type="button">Current field</button>
-          <button class="view-btn" id="compressedViewBtn" type="button">Compression hypothesis</button>
+          <button class="view-btn active" id="rawViewBtn" type="button">Raw intake</button>
+          <button class="view-btn" id="realViewBtn" type="button">Real dependency reading</button>
         </div>
         <div class="legend">
-        <span><i class="dot hard"></i> hard</span>
-        <span><i class="dot soft"></i> soft</span>
-        <span><i class="dot assumed"></i> assumed</span>
-        <span><i class="dot candidate"></i> compression candidate</span>
+          <span><i class="icon required"></i> required state</span>
+          <span><i class="icon pathway"></i> pathway</span>
+          <span><i class="icon assumption"></i> false dependency / assumption</span>
+          <span><i class="icon unresolved"></i> inspect further</span>
         </div>
       </div>
     </div>
     <div class="map-wrap" id="mapWrap">
       <svg id="depMap" viewBox="0 0 1200 700" role="img" aria-label="Dependency map"></svg>
-      <div class="map-empty" id="mapEmpty">Set an outcome, then add what appears to be required.</div>
+      <div class="map-empty" id="mapEmpty">Set a target state, then add candidate items.</div>
     </div>
   </section>
 
-  <section class="card panel method-card" id="method">
-    <div class="eyebrow">Method</div>
-    <h2>Map before compressing.</h2>
-    <p class="muted">Dependency Field first makes the current structure visible. It then tests whether dependencies are binding, inherited, informational, sequential or merely assumed. Compression is a hypothesis, not an instruction.</p>
-  </section>
-
   <section class="results-grid">
-    <section class="card panel">
-      <div class="eyebrow">Dependency ledger</div>
-      <h2>What the field currently believes</h2>
+    <section class="panel">
+      <div class="eyebrow">Candidate ledger</div>
+      <h2>What is in the field</h2>
       <div id="ledger" class="ledger"></div>
     </section>
-    <section class="card panel">
-      <div class="eyebrow">Compression reading</div>
-      <h2>What may be removable, parallelisable or compressible</h2>
-      <div id="compressionResults" class="compression-results">
-        <p class="muted">Run analysis after mapping the first dependency chain.</p>
+    <section class="panel">
+      <div class="eyebrow">Structural reading</div>
+      <h2>What appears truly required, merely possible, or wrongly treated as required</h2>
+      <div id="readingResults" class="reading-results">
+        <p class="muted">Convert the field after mapping the first chain.</p>
       </div>
     </section>
   </section>
 
+  <section class="panel method-card" id="method">
+    <div class="eyebrow">Method</div>
+    <h2>Outcome → target state → required states → pathways → assumptions</h2>
+    <p class="muted">Dependency Field does not begin by accepting the standard checklist. It asks a narrower question: <strong>what must become true for the target state to be true?</strong> Some familiar activities survive that test. Others remain useful pathways. Others collapse into assumptions and can be stripped out or treated differently.</p>
+  </section>
+
   <footer class="footer">
-    Dependency Field · observation before intervention · a dependency may be real without being permanent
+    Dependency Field · stark on purpose · map the truth conditions, not the ritual
   </footer>
 </div>
 <script type="module" src="dependency.js"></script>
