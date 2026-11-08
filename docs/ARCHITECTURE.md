@@ -37,7 +37,7 @@ Once a target state exists, all other items are tested against it.
 The user’s plain-language articulation of what they are trying to get done.
 
 ### Target state
-The necessary condition anchor.
+The outcome the analysis is trying to explain or achieve.
 
 ### Candidate item
 Something the user believes matters.
@@ -64,7 +64,7 @@ Possible readings:
 
 ## Core rule
 
- > A candidate strict dependency is a condition the target state appears unable to occur without, within a clearly stated scope. The counterfactual answer is a screening judgement, not proof.
+A candidate strict dependency is a condition the target state appears unable to occur without, within a clearly stated scope. The counterfactual answer is a screening judgement, not proof.
 
 The prototype records the user's counterfactual judgement. It does not independently verify the judgement or establish legal, technical or operational necessity.
 
