@@ -54,7 +54,7 @@ For each candidate item, ask:
 
 ### 5. Distinguish necessary condition from route
 
-A required state is not the same thing as a pathway.
+A candidate required state is not the same thing as a pathway.
 
 Example:
 
