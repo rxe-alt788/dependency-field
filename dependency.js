@@ -42,8 +42,8 @@ const el={
 const tests=[
   ['Target-state test','If the target state were already true, which items would have had to become true somewhere along the way?'],
   ['Counterfactual test','Could the target state still occur if this item never happened? If yes, it is not a strict dependency.'],
-  ['Pathway test','Is this a necessary truth-condition, or merely one way of satisfying a necessary condition?'],
-  ['Authority test','Who says this is required, and are they naming a real dependency or a preferred route?'],
+  ['Pathway test','Is this a necessary necessary condition, or merely one way of satisfying a necessary condition?'],
+  ['Authority test','Who says this is required, and are they naming a candidate dependency or a preferred route?'],
   ['Substitution test','Could a different mechanism, actor or sequence satisfy the same requirement?'],
   ['Assumption test','Has a conventional step been promoted into an unquestioned dependency?']
 ];
@@ -149,7 +149,7 @@ function computeReading(item){
   if(item.counterfactual==='no'){
     return {
       bucket:'required',
-      title:'Real dependency',
+      title:'Candidate required state',
       reason:'Without this state, the target state cannot become true. Treat it as a required state, even if the pathway to satisfy it may vary.'
     };
   }
@@ -163,7 +163,7 @@ function computeReading(item){
     }
     return {
       bucket:'assumption',
-      title:'False dependency / assumption',
+      title:'Unverified assumption',
       reason:'This is currently being treated as required, but the target state could still occur without it. Challenge, reframe or remove it from the strict dependency chain.'
     };
   }
@@ -178,13 +178,13 @@ function computeReading(item){
     return {
       bucket:'pathway',
       title:'Possible pathway',
-      reason:'This is currently framed as a route to the outcome rather than a truth-condition. Confirm through the counterfactual test.'
+      reason:'This is currently framed as a route to the outcome rather than a necessary condition. Confirm through the counterfactual test.'
     };
   }
   return {
     bucket:'unresolved',
     title:'Inspect further',
-    reason:'Not enough information yet to distinguish a true dependency from an assumption, habit or pathway.'
+    reason:'Not enough information yet to distinguish a necessary condition from an assumption, habit or pathway.'
   };
 }
 
