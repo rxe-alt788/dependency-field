@@ -23,7 +23,7 @@
   <section class="hero">
     <div class="eyebrow">Dependency compression · necessary-state mapping</div>
     <h1>Do not map the usual process. Map what must actually become true.</h1>
-    <p>Dependency Field separates <strong>required states</strong>, <strong>possible pathways</strong>, and <strong>assumptions treated as requirements</strong>. “Get a job” becomes “be hired into acceptable paid work.” “Apply for a job” may be a pathway, but it is not automatically a true dependency.</p>
+    <p>Dependency Field separates <strong>required states</strong>, <strong>possible pathways</strong>, and <strong>assumptions treated as requirements</strong>. “Get a job” becomes “be hired into acceptable paid work.” “Apply for a job” may be a pathway, but it is not automatically a necessary condition.</p>
     <div class="privacy-note"><strong>Local-first prototype.</strong> Your mapping data stays in this browser unless you export it. The application is designed to work without transmitting your field data.</div>
   </section>
 
@@ -100,7 +100,7 @@
       <div class="divider"></div>
 
       <div class="eyebrow">3 · Test the structure</div>
-      <h2>Use the questions below to collapse rituals into real dependencies.</h2>
+      <h2>Use these questions to test familiar steps against the conditions the outcome actually requires.</h2>
       <div class="question-grid" id="diagnosticQuestions"></div>
     </section>
 
@@ -114,7 +114,7 @@
         </div>
         <div class="metrics" id="metrics"></div>
         <div class="button-stack">
-          <button id="analyseBtn" class="primary" type="button">Convert to real dependencies</button>
+          <button id="analyseBtn" class="primary" type="button">Assess candidate dependencies</button>
           <button id="exportBtn" class="ghost" type="button">Export map JSON</button>
           <label class="ghost file-label" for="importInput">Import map JSON</label>
           <input id="importInput" class="visually-hidden" type="file" accept="application/json,.json" />
@@ -139,12 +139,12 @@
       <div>
         <div class="view-toggle" role="group" aria-label="Map view">
           <button class="view-btn active" id="rawViewBtn" type="button">Raw intake</button>
-          <button class="view-btn" id="realViewBtn" type="button">Real dependency reading</button>
+          <button class="view-btn" id="realViewBtn" type="button">Structural assessment</button>
         </div>
         <div class="legend">
           <span><i class="icon required"></i> required state</span>
           <span><i class="icon pathway"></i> pathway</span>
-          <span><i class="icon assumption"></i> false dependency / assumption</span>
+          <span><i class="icon assumption"></i> unverified assumption</span>
           <span><i class="icon unresolved"></i> inspect further</span>
         </div>
       </div>
@@ -163,7 +163,7 @@
     </section>
     <section class="panel">
       <div class="eyebrow">Structural reading</div>
-      <h2>What appears truly required, merely possible, or wrongly treated as required</h2>
+      <h2>What appears necessary, what may be a route, and what remains unverified</h2>
       <div id="readingResults" class="reading-results">
         <p class="muted">Convert the field after mapping the first chain.</p>
       </div>
