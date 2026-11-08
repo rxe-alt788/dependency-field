@@ -37,7 +37,7 @@ Once a target state exists, all other items are tested against it.
 The user’s plain-language articulation of what they are trying to get done.
 
 ### Target state
-The truth-condition anchor.
+The necessary condition anchor.
 
 ### Candidate item
 Something the user believes matters.
@@ -58,7 +58,7 @@ A derived interpretation of the candidate item.
 Possible readings:
 
 - **required** — a candidate condition assessed as necessary under the current target-state definition
-- **pathway** — a route, but not a truth-condition
+- **pathway** — a route, but not a necessary condition
 - **assumption** — currently treated as necessary, but its necessity is not established by the available information
 - **unresolved** — more inquiry required
 
