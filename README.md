@@ -78,6 +78,7 @@ docs/
   METHODOLOGY.md
   PRIVACY.md
   TESTS.md
+  RELEASE-CHECKLIST.md
   OBSERVATORY_INTEGRATION.md
 examples/
   example-map.json
