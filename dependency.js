@@ -431,7 +431,7 @@ function drawNode(id,label,subline,bucket,point,readingTitle=''){
   sub.setAttribute('x',point.x);
   sub.setAttribute('y',point.y+18);
   sub.setAttribute('class','node-sub');
-  sub.textContent=id==='target' ? 'Truth-condition anchor' : truncate(view==='real' ? (readingTitle || subline) : subline,30);
+  sub.textContent=id==='target' ? 'Target outcome' : truncate(view==='real' ? (readingTitle || subline) : subline,30);
   g.appendChild(sub);
 
   if(id!=='target'){
