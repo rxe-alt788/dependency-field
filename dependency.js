@@ -150,7 +150,7 @@ function computeReading(item){
     return {
       bucket:'required',
       title:'Candidate required state',
-      reason:'Without this state, the target state cannot become true. Treat it as a required state, even if the pathway to satisfy it may vary.'
+      reason:'The current counterfactual answer indicates that the target state may depend on this condition. Treat it as a candidate requirement and verify its necessity, scope and available alternatives.'
     };
   }
   if(item.counterfactual==='yes'){
@@ -158,20 +158,20 @@ function computeReading(item){
       return {
         bucket:'pathway',
         title:'Pathway',
-        reason:'This may be a useful route, but the target state could still occur without it. Keep it as one path, not as a necessary dependency.'
+        reason:'This may be a useful route, but the current answer suggests the target state could occur without it. Keep it as a possible path, not an established requirement.'
       };
     }
     return {
       bucket:'assumption',
       title:'Unverified assumption',
-      reason:'This is currently being treated as required, but the target state could still occur without it. Challenge, reframe or remove it from the strict dependency chain.'
+      reason:'The current answer suggests the target state could occur without this item. It is not established as a strict requirement; test whether it is a preferred route, local rule, practical constraint or inherited assumption.'
     };
   }
   if(item.counterfactual==='partial'){
     return {
       bucket:'unresolved',
-      title:'Conditionally relevant',
-      reason:'This matters for some pathways or versions of the target state, but not all. Narrow the target state or clarify which version matters.'
+      title:'Conditional requirement to investigate',
+      reason:'This may matter for some versions or circumstances but not others. Specify the scope and conditions before classifying it.'
     };
   }
   if(item.kind==='pathway'){
@@ -183,8 +183,8 @@ function computeReading(item){
   }
   return {
     bucket:'unresolved',
-    title:'Inspect further',
-    reason:'Not enough information yet to distinguish a necessary condition from an assumption, habit or pathway.'
+    title:'Unresolved',
+    reason:'There is not enough information to distinguish a necessary condition from a pathway, constraint or assumption.'
   };
 }
 
