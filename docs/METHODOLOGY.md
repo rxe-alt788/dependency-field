@@ -47,8 +47,8 @@ For each candidate item, ask:
 
 **If this never happened, could the target state still occur?**
 
-- If **no**, the item is a candidate **required state**.
-- If **yes**, the item is **not** a strict dependency. It may be a pathway or a false dependency.
+- If **no**, the item is a **candidate required state**. Check whether the target state is precise enough and whether the condition is genuinely necessary in the stated context.
+- If **yes**, the item is **not established as a strict dependency**. It may be a pathway, optional practice or assumption.
 - If **partial**, the item may matter for some versions of the target state but not all.
 - If **unknown**, the item needs further investigation.
 
@@ -77,6 +77,8 @@ Example:
 
 ### 7. Read the field structurally
 
+The classifications are provisional. The counterfactual test is a screening question, not proof of necessity or dispensability.
+
 The goal is not merely to produce a prettier process map.
 
 The goal is to arrive at a more defensible statement of:
@@ -88,13 +90,13 @@ The goal is to arrive at a more defensible statement of:
 ## Output categories
 
 ### Required state
-A true dependency.
+A condition currently assessed as necessary for the target state. Treat it as a candidate until its necessity, scope and alternatives have been checked.
 
 ### Pathway
 One route to satisfying a requirement.
 
 ### Assumption
-A step wrongly treated as a requirement.
+A step treated as necessary without sufficient evidence that it is necessary.
 
 ### Unresolved item
 Needs more inquiry.
