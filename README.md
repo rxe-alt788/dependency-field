@@ -6,7 +6,7 @@ Dependency Field is a local-first browser instrument for turning ordinary proces
 
 The project is designed for dependency compression work. It distinguishes:
 
-- **required states** — conditions without which the target state cannot occur;
+- **candidate required states** — conditions currently assessed as necessary for the target state, pending checks of scope, evidence and alternatives;
 - **pathways** — one or more routes by which a required state may be satisfied;
 - **assumptions** — conventional steps or inherited practices whose necessity has not been established;
 - **unresolved items** — things that may matter, but have not yet been sufficiently tested.
@@ -24,7 +24,7 @@ Example:
 
 From there:
 
-- “An employer knows enough about me to consider hiring me” may be a **required state**.
+- “An employer knows enough about me to consider hiring me” may be a **candidate required state**.
 - “Submit an application to an advertised role” may be a **pathway**.
 - “Use a job portal because that is how people normally do it” may be an **assumption**.
 
