@@ -52,7 +52,7 @@ For each candidate item, ask:
 - If **partial**, the item may matter for some versions of the target state but not all.
 - If **unknown**, the item needs further investigation.
 
-### 5. Distinguish truth-condition from route
+### 5. Distinguish necessary condition from route
 
 A required state is not the same thing as a pathway.
 
