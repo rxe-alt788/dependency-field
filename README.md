@@ -8,7 +8,7 @@ The project is designed for dependency compression work. It distinguishes:
 
 - **required states** — conditions without which the target state cannot occur;
 - **pathways** — one or more routes by which a required state may be satisfied;
-- **assumptions** — conventional steps or inherited practices that are often treated as requirements but fail the counterfactual test;
+- **assumptions** — conventional steps or inherited practices whose necessity has not been established;
 - **unresolved items** — things that may matter, but have not yet been sufficiently tested.
 
 ## Core idea
@@ -35,14 +35,14 @@ From there:
 3. Add candidate items that appear relevant.
 4. Test those items against the counterfactual question:
    - **If this never happened, could the target state still occur?**
-5. Reclassify items as real dependencies, pathways, assumptions, or unresolved items.
+5. Record a provisional assessment: candidate requirements, pathways, assumptions, or unresolved items.
 6. Visualise the field.
 7. Export/import the map as JSON.
 
 ## Interface structure
 
 - **Raw intake** — how the user currently thinks about the situation.
-- **Real dependency reading** — the field’s structural interpretation after conversion.
+- **Structural assessment** — a provisional interpretation after applying the counterfactual screen.
 
 ## Privacy
 
@@ -104,6 +104,6 @@ No open-source license has yet been selected.
 
 ## First field case: public-service application
 
-A small illustrative case is included at [`examples/government-service.json`](examples/government-service.json). It distinguishes the states required for an approval from possible evidence pathways and the assumption that the standard online portal is mandatory.
+A small illustrative case is included at [`examples/government-service.json`](examples/government-service.json). It proposes candidate conditions for an approval, possible evidence pathways and an assumption that the standard online portal is mandatory. These are hypotheses to inspect, not verified facts about a particular agency.
 
 See [`docs/CASE-001.md`](docs/CASE-001.md) for the case rationale and loading instructions. This is a structural test case, not legal guidance or a description of a named government program.
