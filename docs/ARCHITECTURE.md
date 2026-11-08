@@ -57,24 +57,24 @@ A derived interpretation of the candidate item.
 
 Possible readings:
 
-- **required** — a true dependency
+- **required** — a candidate condition assessed as necessary under the current target-state definition
 - **pathway** — a route, but not a truth-condition
-- **assumption** — currently treated as necessary, but the target could still occur without it
+- **assumption** — currently treated as necessary, but its necessity is not established by the available information
 - **unresolved** — more inquiry required
 
 ## Core rule
 
-> A dependency is real only if the target state could not occur without it.
+ > A candidate strict dependency is a condition the target state appears unable to occur without, within a clearly stated scope. The counterfactual answer is a screening judgement, not proof.
 
-That rule is implemented through the counterfactual test supplied by the user.
+The prototype records the user's counterfactual judgement. It does not independently verify the judgement or establish legal, technical or operational necessity.
 
 ## Views
 
 ### Raw intake
 Shows the map according to the user’s current framing.
 
-### Real dependency reading
-Shows the map after structural reclassification.
+### Structural assessment
+Shows a provisional assessment after applying the counterfactual screen.
 
 The visual language is intentionally stark:
 
