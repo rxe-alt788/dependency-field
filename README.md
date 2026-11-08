@@ -100,3 +100,10 @@ Current focus:
 ## License
 
 No open-source license has yet been selected.
+
+
+## First field case: public-service application
+
+A small illustrative case is included at [`examples/government-service.json`](examples/government-service.json). It distinguishes the states required for an approval from possible evidence pathways and the assumption that the standard online portal is mandatory.
+
+See [`docs/CASE-001.md`](docs/CASE-001.md) for the case rationale and loading instructions. This is a structural test case, not legal guidance or a description of a named government program.
