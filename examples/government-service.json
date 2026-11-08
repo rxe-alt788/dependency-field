@@ -1,0 +1,85 @@
+{
+  "goal": "Get an application for a public service approved",
+  "targetState": "The applicant has received approval and can access the service.",
+  "items": [
+    {
+      "id": "gov_eligibility",
+      "label": "The applicant meets the service's eligibility conditions.",
+      "kind": "required",
+      "parentId": "target",
+      "basis": "Approval cannot validly be granted if the applicant does not satisfy the substantive eligibility conditions.",
+      "owner": "Applicant / assessing authority",
+      "counterfactual": "no",
+      "notes": "This is a substantive condition, not a prescribed administrative step.",
+      "reading": null
+    },
+    {
+      "id": "gov_authority",
+      "label": "An authorised decision-maker can grant the service.",
+      "kind": "required",
+      "parentId": "target",
+      "basis": "The approval must be made by an authority with the legal power to grant it.",
+      "owner": "Service authority",
+      "counterfactual": "no",
+      "notes": "The identity of the decision-maker may vary; the existence of valid authority is the required state.",
+      "reading": null
+    },
+    {
+      "id": "gov_evidence",
+      "label": "The decision-maker has enough reliable information to establish eligibility.",
+      "kind": "required",
+      "parentId": "target",
+      "basis": "The authority needs a sufficient basis to determine whether the eligibility conditions are met.",
+      "owner": "Applicant / service authority",
+      "counterfactual": "no",
+      "notes": "The information requirement may be satisfied through different evidence sources.",
+      "reading": null
+    },
+    {
+      "id": "gov_online_form",
+      "label": "The applicant submits the prescribed online form.",
+      "kind": "pathway",
+      "parentId": "gov_evidence",
+      "basis": "An online form is one way to communicate the information needed for assessment.",
+      "owner": "Applicant",
+      "counterfactual": "yes",
+      "notes": "Alternative channels may include assisted lodgement, paper forms or an authorised representative.",
+      "reading": null
+    },
+    {
+      "id": "gov_existing_records",
+      "label": "The authority retrieves relevant information from an existing verified record.",
+      "kind": "pathway",
+      "parentId": "gov_evidence",
+      "basis": "Existing records may provide some or all of the evidence needed to establish eligibility.",
+      "owner": "Service authority / record holder",
+      "counterfactual": "yes",
+      "notes": "This is a possible evidence pathway, subject to lawful access, accuracy and consent requirements.",
+      "reading": null
+    },
+    {
+      "id": "gov_appointment",
+      "label": "The applicant attends an in-person appointment.",
+      "kind": "pathway",
+      "parentId": "gov_evidence",
+      "basis": "An appointment may be used to verify identity or collect information, but it is not necessarily the only way to do so.",
+      "owner": "Applicant / service provider",
+      "counterfactual": "yes",
+      "notes": "Test whether the appointment is genuinely necessary for this applicant and service.",
+      "reading": null
+    },
+    {
+      "id": "gov_portal_assumption",
+      "label": "The applicant must use the standard online portal because that is the normal process.",
+      "kind": "assumption",
+      "parentId": "gov_evidence",
+      "basis": "The portal may be the default route without being a truth-condition for approval.",
+      "owner": "Service authority",
+      "counterfactual": "yes",
+      "notes": "A standard channel should not be mistaken for a necessary state if equivalent channels can satisfy the evidence requirement.",
+      "reading": null
+    }
+  ],
+  "selectedId": "gov_eligibility",
+  "analysedAt": null
+}
