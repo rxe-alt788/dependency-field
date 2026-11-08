@@ -73,7 +73,7 @@
       "label": "The applicant must use the standard online portal because that is the normal process.",
       "kind": "assumption",
       "parentId": "gov_evidence",
-      "basis": "The portal may be the default route without being a truth-condition for approval.",
+      "basis": "The portal may be the default route without being a necessary condition for approval.",
       "owner": "Service authority",
       "counterfactual": "yes",
       "notes": "A standard channel should not be mistaken for a necessary state if equivalent channels can satisfy the evidence requirement.",
