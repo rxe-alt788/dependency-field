@@ -17,7 +17,7 @@ The case separates three things that are easily collapsed into one process check
 
 - **Required states:** the applicant is eligible, a valid authority can grant approval, and the decision-maker has sufficient reliable information.
 - **Pathways:** an online form, existing verified records, or an in-person appointment may provide the information needed.
-- **Assumption:** the standard online portal is treated as mandatory because it is the normal route.
+- **Unverified assumption:** the standard online portal is treated as mandatory because it is the normal route, although the case has not established that it is the only lawful or practical channel.
 
 The central question is whether the applicant must complete a particular administrative step, or whether the underlying information and legal conditions can be satisfied another way.
 
@@ -30,7 +30,7 @@ This is a structural demonstration, not a description of a named government prog
 1. Open Dependency Field.
 2. Select **Import map JSON**.
 3. Choose `examples/government-service.json`.
-4. Select **Convert to real dependencies**.
+4. Select **Assess candidate dependencies**.
 5. Inspect whether the pathway and assumption classifications survive scrutiny.
 
-The case is deliberately small. Its purpose is to test the method, not to model an entire agency.
+The case is deliberately small. Its purpose is to test the method, not to model an entire agency. Its classifications are starting hypotheses; check them against the actual service rules and circumstances before treating them as facts.
